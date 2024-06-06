@@ -1,16 +1,23 @@
+
+
+
 # This script needs a llama-parse key setup in the keys.py script to run.
 from llama_parse import LlamaParse
 import os
 from config import *
 
+
+
+
 # Parser parameters
 parser = LlamaParse(
-    api_key=LLAMAPARSE_API_KEY, 
+    api_key="LLAMAPARSE_API_KEY", 
     result_type="markdown",  # "markdown" or "text"
     num_workers=4,
     verbose=True,
     language="en",
 )
+
 
 for document in os.listdir("knowledge_pool"):
     #Iterate through the pdfs
