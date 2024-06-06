@@ -17,6 +17,8 @@ def merge_json_files(directory):
 merged_json = merge_json_files("knowledge_pool")
 
 output_file_path = "knowledge_pool/merged.json"
+# Read JSON files with UTF-8 encoding
+
 
 with open("knowledge_pool/merged.json", "w") as output_file:
     json.dump(merged_json, output_file, indent=4)

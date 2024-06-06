@@ -4,14 +4,17 @@
 # This script needs a llama-parse key setup in the keys.py script to run.
 from llama_parse import LlamaParse
 import os
-from config import *
+ #from config import *
+
+# Import LLAMAPARSE_API_KEY from config.py
+from keys import LLAMAPARSE_API_KEY
 
 
 
 
 # Parser parameters
 parser = LlamaParse(
-    api_key="LLAMAPARSE_API_KEY", 
+    api_key=LLAMAPARSE_API_KEY, 
     result_type="markdown",  # "markdown" or "text"
     num_workers=4,
     verbose=True,
@@ -31,8 +34,12 @@ for document in os.listdir("knowledge_pool"):
         # Save to a txt file
         output_filename = os.path.splitext(document)[0]
         output_path = os.path.join("knowledge_pool", f"{output_filename}.txt")
-        with open(output_path, 'w') as f:
+        # with open(output_path, 'w') as f:
+        #     f.write(text)
+        # Save to a txt file with UTF-8 encoding
+        with open(output_path, 'w', encoding='utf-8') as f:
             f.write(text)
+
             
         print(f"Finished parsing {document}")
 
