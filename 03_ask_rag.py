@@ -3,8 +3,9 @@ from openai import OpenAI
 import numpy as np
 import json
 from config import *
+from keys import *
 
-embeddings_json= "knowledge_pool/AASZOK.json"
+embeddings_json= "knowledge_pool/merged.json"
 
 # Choose between "local" or "openai" mode
 mode = "local" # or "local"
@@ -13,7 +14,7 @@ client, completion_model = api_mode(mode)
 # question = "What is the program for the building?"
 # question = "What is the place like?"
 # question = "Is there any mention of the construction materials that should be used?"
-question = "How Atmospheric impacts on morbidity and mortality?"
+question = "What are Human adaptation strategies in response to thermal stimuli?"
 
 num_results = 1 #how many vectors to retrieve
 

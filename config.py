@@ -8,6 +8,12 @@ import random
 from openai import OpenAI
 from keys import *
 
+import win32api
+import win32con
+
+# Set a custom attribute on a file
+file_path = r'E:\iaac_sem_3\studio\New_folder\LLM-Knowledge-Pool-RAG\file.txt'
+win32api.SetFileAttributes(file_path, win32con.FILE_ATTRIBUTE_NORMAL)
 
 # API
 local_client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
